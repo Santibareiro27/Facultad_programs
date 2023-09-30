@@ -17,7 +17,7 @@ float Valida();
 int Consulta(alumnos []);
 void Muestra(alumnos []); 
 void Buscar(alumnos [], char []);
-void Space();
+void Enter();
 
 int main(int argc, char const *argv[])
 {
@@ -53,7 +53,7 @@ int main(int argc, char const *argv[])
             else {
                 cout<<endl<<"No se han cargado datos de alumnos aun"<<endl;
             }
-            Space();
+            Enter();
             break;
 
             case '3':
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[])
             else {
                 cout<<endl<<"No se han cargado datos de alumnos aun"<<endl;
             }
-            Space();
+            Enter();
             break;
 
             case '4':
@@ -77,7 +77,7 @@ int main(int argc, char const *argv[])
             else {
                 cout<<endl<<"No se han cargado datos de alumnos aun"<<endl;
             }
-            Space();
+            Enter();
             break;
 
             case 'S':
@@ -85,7 +85,7 @@ int main(int argc, char const *argv[])
 
             default:
             cout<<endl<<"Error de ingreso, intente nuevamente"<<endl;
-            Space();
+            Enter();
             break;
         }
     } while (menu!='S');
@@ -184,9 +184,9 @@ void Buscar(alumnos alu[], char apellido_in[])
     }
 }
 
-void Space()
+void Enter()
 {
-    cout<<endl<<"Presione espacio para continuar "<<endl;
+    cout<<endl<<"Presione enter para continuar "<<endl;
     cin.ignore();
     fflush(stdin);
     cin.clear();
