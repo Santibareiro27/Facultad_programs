@@ -20,7 +20,7 @@ struct alumnos
 
 void carga_alu (alumnos [], int &);
 void carga_fecha (fecha [], int);
-alumnos Ordena (alumnos [], int);
+void Ordena (alumnos [], int);
 
 int main (int argc, char const *argv[])
 {
@@ -43,7 +43,7 @@ int main (int argc, char const *argv[])
         cin.clear();
         switch (menu)
         {
-            case '1':
+        case '1':
             Ordena(alu,N);
             for (int i=0;i<N;i++)
             {
@@ -57,13 +57,13 @@ int main (int argc, char const *argv[])
             }
             break;
 
-            case '2':
+        case '2':
             break;
 
-            case 'S':
+        case 'S':
             break;
 
-            default:
+        default:
             break;
         }
     } while (menu!='S');
@@ -143,26 +143,19 @@ void carga_fecha (fecha fe[], int i)
     } while (fe[i].anio<0);
 }
 
-alumnos Ordena (alumnos alu[], int N)
+void Ordena (alumnos alu[], int N)
 {
-    alumnos aluord[N];
-    char aux[35];
-    for (int i=0;i<N;i++)
-    {
-        strcpy(aluord[i],alu[i])
-    }
-
+    alumnos aluaux;
     for (int i=0;i<N;i++)
     {
         for (int j=0;j<N-1;j++)
         {
             if (strcmp(alu[j].apnom,alu[j+1].apnom)>0)
             {
-                strcpy(aux,alu[j].apnom);
-                strcpy(alu[j].apnom,alu[j+1].apnom);
-                strcpy(alu[j+1].apnom,aux);
+                aluaux=alu[j];
+                alu[j]=alu[j+1];
+                alu[j+1]=aluaux;
             }
         }
     }
-    return;
 }
