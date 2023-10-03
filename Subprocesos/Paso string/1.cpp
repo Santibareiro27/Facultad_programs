@@ -39,11 +39,13 @@ int main(int argc, char const *argv[])
         cin>>menu;
         fflush(stdin);
         cin.clear();
+        system("cls");
         switch (menu)
         {
             case '1':
             Carga(alu);
             op1=true;
+            system("cls");
             break;
 
             case '2':
@@ -54,6 +56,7 @@ int main(int argc, char const *argv[])
                 cout<<endl<<"No se han cargado datos de alumnos aun"<<endl;
             }
             Enter();
+            system("cls");
             break;
 
             case '3':
@@ -64,6 +67,7 @@ int main(int argc, char const *argv[])
                 cout<<endl<<"No se han cargado datos de alumnos aun"<<endl;
             }
             Enter();
+            system("cls");
             break;
 
             case '4':
@@ -78,6 +82,7 @@ int main(int argc, char const *argv[])
                 cout<<endl<<"No se han cargado datos de alumnos aun"<<endl;
             }
             Enter();
+            system("cls");
             break;
 
             case 'S':
@@ -86,6 +91,7 @@ int main(int argc, char const *argv[])
             default:
             cout<<endl<<"Error de ingreso, intente nuevamente"<<endl;
             Enter();
+            system("cls");
             break;
         }
     } while (menu!='S');
