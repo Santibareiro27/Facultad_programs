@@ -16,9 +16,11 @@ bool CARGA(int&);
 int BUSCAR(char []);
 void MODIFICA(int);
 float CONTROL(int, int&);
+void MUESTRA(int&);
 
 int main(int argc, char *argv[]) {
-	char opcion, nombreaux[N];
+	system("Color 02");
+	char opcion[3], nombreaux[N];
 	int Cpro=0, Ipro, stockaux;
 	do
 	{
@@ -30,9 +32,10 @@ int main(int argc, char *argv[]) {
 		cout<<"5. Mostrar datos cargados."<<endl;
 		cout<<"F o f. Finalizar."<<endl;
 		cout<<endl<<"Opcion: ";
-		cin>>opcion;
+		cin.getline(opcion,2);
 		fflush(stdin);
-		switch (opcion)
+		system("cls");
+		switch (opcion[0])
 		{
 			case'1':
 				if(CARGA(Cpro))
@@ -110,9 +113,10 @@ int main(int argc, char *argv[]) {
 			
 			default:
 				cout<<endl<<"Error de ingreso"<<endl;
+				cin.clear();
 				break;
 		}
-	} while(opcion!='F' and opcion!='f');
+	} while(opcion[0]!='F' and opcion[0]!='f');
 	
 	return 0;
 }
@@ -219,4 +223,13 @@ float CONTROL(int stockaux, int &Cpro) {
 		}
 	}
 	return Cstock*(100/Cpro);
+}
+
+void MUESTRA(int &Cpro) {
+	for(int i=0;i<Cpro;i++) {
+		cout<<endl<<"Codigo: "<<pro[i].codigo<<endl;
+		cout<<endl<<"Nombre: "<<pro[i].codigo<<endl;
+		cout<<endl<<"Precio: "<<pro[i].codigo<<endl;
+		cout<<endl<<"Stock: "<<pro[i].codigo<<endl;
+	}
 }
